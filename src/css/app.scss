@@ -1,0 +1,304 @@
+// GOOGLE FONTS //
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+
+// COLOR VARİABLES //
+$light-color: #FFFFFF;
+$dark-color: #000000;
+$primary-color: #ff7b54;
+$secondary-color: #ffb26b;
+$third-color: #ffd56b;
+$fourth-color: #939b62;
+
+// FONT VARİABLES  //
+$primary-font: 'Montserrat', sans-serif;
+$secondary-font: 'PT Sans', sans-serif;
+
+
+// MAIN STYLES //
+#root {
+    min-width: 100%;
+}
+
+html { 
+    font-size: 62.5%; 
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: $primary-font;
+}
+
+section {
+    height: 94vh;
+}
+
+.container {
+    width: 70%;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+
+
+//  EXTENDS, MİXİNS //
+@mixin centering-flex($space, $direction) {
+    display: flex;
+    justify-content: $space;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+@mixin button($size, $w, $h, $weight) {
+    width: $w;
+    height: $h;
+    border: 0;
+    font-size: $size;
+    font-weight: $weight;
+    cursor: pointer;
+    background-color:  $primary-color;
+    color: $light-color; 
+}
+
+
+%transition {
+    transition: all 0.2s ease-in-out;
+}
+
+%button-hover {
+    background-color: $fourth-color;
+}
+
+
+// CLEARİNG SPACES  //
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+    box-sizing: border-box;
+}
+
+// HEADER STYLES //
+
+#header {
+    padding: 0.7rem 0;
+    .container {
+        @include centering-flex(space-between,row );
+        #logo {
+            a {
+                font-size: 3.2rem;
+                user-select: none;
+                cursor: pointer;
+                font-style: italic;
+                font-family: $secondary-font;
+                letter-spacing: 0.5rem;
+                color: $primary-color;
+            }
+        }
+
+        nav {
+            ul {
+                @include centering-flex(space-between, row);
+            li {
+                margin-right: 1rem;
+                &:last-of-type {
+                    margin-right: 0;
+                }
+
+                .nav-links {
+                    color: $primary-color;
+                    display: block;
+                    position: relative;
+                    @extend %transition;
+                    font-size: 2vh;
+        
+                    &:hover {
+                        color: $secondary-color;
+                    }
+                    &::after {
+                        position: absolute;
+                        content: "";
+                        top: 100%;
+                        left: 0;
+                        width: 100%;
+                        height: 2px;
+                        background: $primary-color;
+                        transform: scaleX(0);
+                        transform-origin: right;
+                        transition: transform 0.5s;
+                      }
+        
+                      &:hover::after {
+                        transform: scaleX(1);
+                        transform-origin: left;
+                      }
+                }
+            }
+          }
+
+         
+        }
+    }
+}
+
+// HERO STYLES //
+
+#hero {
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.8)),url('../assets/photo1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    height: 90vh;
+
+    .container {
+        .hero-content {
+            margin: 0;
+            position: absolute;
+            top: 52%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            h1 {
+                font-size: 4.7vh;
+                color: $primary-color;
+            }
+    
+            h3 {
+                font-size: 3.2vh;
+                color: $third-color;
+                margin: 1rem 0;
+            }
+    
+            button {
+                @include button(1.7vh, 15.5vh, 4.7vh, 600);
+            }
+        }
+       
+    }
+
+}
+
+
+// CONTENT STYLES //
+
+main {
+    margin: 8rem 0;
+    .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        .content-header {
+            text-align: center;
+            margin-bottom: 7rem;
+
+            h1 { 
+                font-size: 3.7vh;
+                color: $primary-color;
+            }
+
+            span {
+                font-family: $secondary-font;
+                font-style: italic;
+                font-size: 1.7vh;
+            }
+           
+        }
+        .row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr;
+            grid-row-gap: 4rem;
+            .card {
+                width: 95%;
+                position: relative;
+                text-align: center;
+                margin: 0 auto;
+                .img-wrapper {
+                    
+
+                    & img {
+                        max-width: 100%;
+                        filter: brightness(50%);
+                        border-radius: 0.8rem;
+                    }
+                }
+
+               
+                .img-text {
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  width: 100%;
+                  height: 100%;
+                  transform: translate(-50%, -50%);
+                  @extend %transition;
+                  cursor: pointer;
+                  border-radius: 0.8rem;
+                  background-color: rgba(255, 178, 107, 0.1);
+                    &:hover {
+                        background-color: rgba(255, 178, 107, 0.4);
+                    }
+
+                  .middle {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    color: $light-color;
+                    h2 {
+                        font-size: 2.6rem;
+                        font-family: $secondary-font;
+                    }
+                    
+                    p {
+                        margin: 1rem 0;
+                        font-size: 1.7vh;
+                        font-weight: 600;
+                    }
+
+                    button {
+                        @include button(1.5vh, 11.2vh, 4.2vh, 400);
+                        @extend %transition;
+                        font-family: $secondary-font;
+
+                        &:hover {
+                            @extend %button-hover;
+                        }
+                    }
+
+                  }
+                }
+             
+            }
+        }
+    }
+}
+
+
+
+// RESPONSIVE MEDIA QUERIES //
+
+@media screen and (max-width: 1200px) {
+    #root {
+        max-width: 100%;
+    }
+    .container {
+        width: 100%;
+    }
+
+    #header .container  {
+       @include centering-flex(space-between,column); 
+    }
+
+    #main .container .row {
+        grid-template-columns: 1fr;
+            grid-row-gap: 2rem;
+    }
+  }
