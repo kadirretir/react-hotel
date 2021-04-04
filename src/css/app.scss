@@ -10,6 +10,8 @@ $secondary-color: #ffb26b;
 $third-color: #ffd56b;
 $fourth-color: #939b62;
 
+/* $primary-color: #ff7b54; */
+
 // FONT VARİABLES  //
 $primary-font: 'Montserrat', sans-serif;
 $secondary-font: 'PT Sans', sans-serif;
@@ -23,6 +25,7 @@ $secondary-font: 'PT Sans', sans-serif;
 html { 
     font-size: 62.5%; 
     scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
 }
 
 body {
@@ -65,7 +68,7 @@ h1 {
 
 
 %transition {
-    transition: all 0.2s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 %button-hover {
@@ -83,10 +86,18 @@ h1 {
     list-style-type: none;
     box-sizing: border-box;
 }
-
+// sticky Header //
+.stickyStyle {
+    z-index: 9;
+    background-color: rgba(255, 213, 107, 0.9);
+}
 // HEADER STYLES //
 
+
 #header {
+    @extend %transition;
+    position: sticky;
+    top: 0;
     padding: 0.7rem 0;
     .container {
         @include centering-flex(space-between,row );
@@ -150,11 +161,12 @@ h1 {
 // HERO STYLES //
 
 #hero {
-    background-image: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.8)),url('../assets/photo1.jpg');
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.5)),url('../assets/photo1.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
+    filter: brightness(120%);
     height: 90vh;
 
     .container {
@@ -168,6 +180,7 @@ h1 {
             h1 {
                 font-size: 4.7vh;
                 color: $primary-color;
+                font-weight: 700;
             }
     
             h3 {
@@ -190,6 +203,7 @@ h1 {
 
 main {
     margin: 8rem 0;
+     
     .container {
         display: grid;
         grid-template-columns: 1fr;
@@ -216,17 +230,32 @@ main {
             grid-template-rows: 1fr;
             grid-row-gap: 4rem;
             .card {
+                &::after {
+                    content: attr(data-category);
+                    position: absolute;
+                    bottom: 2px;
+                    left: 0;
+                    width: 25%;
+                    height: 30px;
+                    font-family: $secondary-font;
+                    font-size: 1.4vh;
+                    color: $light-color;
+                    background-color: $primary-color;
+                    line-height: 27px;
+                    cursor: pointer;
+                    border-bottom-left-radius: 0.8rem;
+                }
                 width: 95%;
+                height: fit-content;
                 position: relative;
                 text-align: center;
                 margin: 0 auto;
                 .img-wrapper {
-                    
-
                     & img {
                         max-width: 100%;
                         filter: brightness(50%);
                         border-radius: 0.8rem;
+                        height: auto;
                     }
                 }
 
@@ -259,7 +288,7 @@ main {
                     
                     p {
                         margin: 1rem 0;
-                        font-size: 1.7vh;
+                        font-size: 1.5vh;
                         font-weight: 600;
                     }
 
@@ -274,6 +303,17 @@ main {
                     }
 
                   }
+
+                  h3 {
+                    font-family: $secondary-font;
+                    font-size: 1.5vh;
+                    color: $secondary-color;
+                    position: absolute;
+                    top: 90%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+
                 }
              
             }
@@ -302,3 +342,4 @@ main {
             grid-row-gap: 2rem;
     }
   }
+

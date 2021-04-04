@@ -1,6 +1,8 @@
 import React, { useContext } from 'react'
 import { HotelsContext } from '../contexts/HotelsContext';
 import Bounce from 'react-reveal/Bounce';
+import { FaCheck } from 'react-icons/fa';
+
 
 function Content() {
     const hotelContext = useContext(HotelsContext);
@@ -17,7 +19,7 @@ function Content() {
                     {hotelContext.myHotel.map((hotel) => {
                         return (
                             
-                            <div className="card">
+                            <div className="card" data-category={`${hotel.avaibleRoom} Oda Mevcut`}>
                                 <figure className="img-wrapper"> 
                                 <img src={hotel.hotel_img} alt="hotelimages" />
                                 </figure>
@@ -26,8 +28,8 @@ function Content() {
                                    <h2>{hotel.title}</h2>
                                    <p>{`Haftalık Aile ile Konaklama/$${hotel.price}`}</p>
                                    <button>Rezervasyon Yap</button>
-                                   <h3>{}</h3>
                                    </div>
+                                   <h3><FaCheck/>{hotel.family ? "Aile için uygun" : "Gençlere özel fırsatlar"}</h3>
                                 </div>
                 
                             </div>

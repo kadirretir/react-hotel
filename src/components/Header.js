@@ -1,9 +1,25 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
+import '../css/app.css';
 
 function Header() {
+    const [stickyHeader, setStickyHeader] = useState(false);
+
+    const headerSet = () => {
+        if(window.pageYOffset > 0) {
+            setStickyHeader(true)
+        } else setStickyHeader(false)
+    }
+
+    useEffect(() => {
+        window.addEventListener("scroll", headerSet)
+
+        return () => 
+        window.removeEventListener("scroll", headerSet)
+    }, [])
+
     return (
-        <div id="header">
+        <div id="header" className={stickyHeader ? "stickyStyle" : null}>
             <div className="container">
                 <div id="logo">
                     <h1>
