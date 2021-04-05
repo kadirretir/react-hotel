@@ -1,0 +1,44 @@
+// GOOGLE FONTS //
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+
+// COLOR VARİABLES //
+$light-color: #FFFFFF;
+$dark-color: #000000;
+
+$primary-color: #f88f01;
+$secondary-color: #e27802;
+$third-color: #6a492b;
+$fourth-color: #58391c;
+
+// FONT VARİABLES  //
+$primary-font: 'Montserrat', sans-serif;
+$secondary-font: 'PT Sans', sans-serif;
+
+//  EXTENDS, MİXİNS //
+@mixin centering-flex($space, $direction) {
+    display: flex;
+    justify-content: $space;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+@mixin button($size, $w, $h, $weight) {
+    width: $w;
+    height: $h;
+    border: 0;
+    font-size: $size;
+    font-weight: $weight;
+    cursor: pointer;
+    background-color:  $primary-color;
+    color: $light-color; 
+}
+
+
+%transition {
+    transition: all 0.3s ease-in-out;
+}
+
+%button-hover {
+    background-color: $fourth-color;
+}

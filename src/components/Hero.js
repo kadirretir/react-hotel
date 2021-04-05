@@ -1,5 +1,6 @@
 import React from 'react'
 import Slide from 'react-reveal/Slide';
+import '../css/hero.scss';
 
 function Hero() {
 

@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans&display=swap");
+/* $light-color: #FFFFFF;
+$dark-color: #000000;
+$primary-color: #ff7b54;
+$secondary-color: #ffb26b;
+$third-color: #ffd56b;
+$fourth-color: #939b62; */
+/* $primary-color: #ff7b54; */
+#footer {
+  height: auto;
+  padding: 3rem 0;
+  background-color: #f88f01;
+  -webkit-filter: contrast(150%);
+          filter: contrast(150%);
+}
+
+#footer .container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  height: 17vh;
+  -webkit-filter: brightness(80%);
+          filter: brightness(80%);
+}
+
+#footer .container .middle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#footer .container .footer-left #logo a {
+  font-size: 3.2rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+  font-style: italic;
+  font-family: "PT Sans", sans-serif;
+  letter-spacing: 0.5rem;
+  color: #FFFFFF;
+}
+
+#footer .container .footer-left p {
+  font-size: 1.4vh;
+  color: #FFFFFF;
+}
+
+#footer .container .footer-right h3 {
+  font-family: "PT Sans", sans-serif;
+  font-size: 1.7vh;
+  color: #FFFFFF;
+}
+
+#footer .container .footer-right .socials a {
+  font-size: 3.5vh;
+  color: #FFFFFF;
+}
+
+@media screen and (max-width: 1200px) {
+  #footer .container {
+    width: 95%;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    grid-row-gap: 3vh;
+    height: 21.3vh;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #footer .container {
+    width: 90%;
+  }
+}
+/*# sourceMappingURL=footer.css.map */

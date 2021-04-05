@@ -21,17 +21,17 @@ function Header() {
     return (
         <div id="header" className={stickyHeader ? "stickyStyle" : null}>
             <div className="container">
-                <div id="logo">
+                <div className={stickyHeader ? "logo stickyLogo" : "logo"}>
                     <h1>
                         <Link to="/">HOTELS</Link>
                     </h1>
                 </div>
                 <nav>
                     <ul>
-                        <li><Link to="/" className="nav-links">Anasayfa</Link></li>
-                        <li><Link to="/about" className="nav-links">Hakkımızda</Link></li>
-                        <li><Link to="hotels" className="nav-links">Otellerimiz</Link></li>
-                        <li><Link to="contact" className="nav-links">İletişim</Link></li>
+                        <li><Link to="/" className={stickyHeader ? "nav-links stickyMenu" : "nav-links"}>Anasayfa</Link></li>
+                        <li><Link to="/about" className={stickyHeader ? "nav-links stickyMenu" : "nav-links"}>Hakkımızda</Link></li>
+                        <li><Link to="hotels" className={stickyHeader ? "nav-links stickyMenu" : "nav-links"}>Otellerimiz</Link></li>
+                        <li><Link to="contact" className={stickyHeader ? "nav-links stickyMenu" : "nav-links"}>İletişim</Link></li>
                     </ul>
 
                 </nav>

@@ -1,0 +1,131 @@
+@import "variables";
+
+#rooms {
+    margin: 8rem 0;  
+    height: auto;
+    .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        .content-header {
+            text-align: center;
+            margin-bottom: 7rem;
+
+            h1 { 
+                font-size: 3.7vh;
+                color: $primary-color;
+            }
+
+            span {
+                font-family: $secondary-font;
+                font-style: italic;
+                font-size: 1.7vh;
+            }
+           
+        }
+        .row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr;
+            grid-row-gap: 4rem;
+            .card {
+                &::after {
+                    content: attr(data-category);
+                    position: absolute;
+                    bottom: 2px;
+                    left: 0;
+                    width: 25%;
+                    height: 30px;
+                    font-family: $secondary-font;
+                    font-size: 1.4vh;
+                    color: $light-color;
+                    background-color: $primary-color;
+                    line-height: 27px;
+                    cursor: pointer;
+                    border-bottom-left-radius: 0.8rem;
+                }
+                width: 95%;
+                height: fit-content;
+                position: relative;
+                text-align: center;
+                margin: 0 auto;
+                .img-wrapper {
+                    & img {
+                        max-width: 100%;
+                        filter: brightness(50%);
+                        border-radius: 0.8rem;
+                        height: auto;
+                    }
+                }
+
+               
+                .img-text {
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  width: 100%;
+                  height: 100%;
+                  transform: translate(-50%, -50%);
+                  @extend %transition;
+                  cursor: pointer;
+                  border-radius: 0.8rem;
+                  background-color: rgba(255, 178, 107, 0.1);
+                    &:hover {
+                        background-color: rgba(255, 178, 107, 0.4);
+                    }
+
+                  .middle {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    color: $light-color;
+                    h2 {
+                        font-size: 2.6vh;
+                        font-family: $secondary-font;
+                    }
+                    
+                    p {
+                        margin: 1vh 0;
+                        font-size: 1.5vh;
+                        font-weight: 600;
+                    }
+
+                    button {
+                        @include button(1.5vh, 11.2vh, 4.2vh, 400);
+                        @extend %transition;
+                        font-family: $secondary-font;
+
+                        &:hover {
+                            @extend %button-hover;
+                        }
+                    }
+
+                  }
+
+                }
+             
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+   
+    // MAIN RESPONSIVE //
+
+    #rooms .container .row {
+        grid-template-columns: 1fr 1fr;
+            grid-row-gap: 2rem;
+    }
+
+   
+  }
+
+@media screen and (max-width: 768px) {
+    
+    #rooms .container .row {
+        grid-template-columns: 1fr;
+            grid-row-gap: 2rem;
+    }
+  }

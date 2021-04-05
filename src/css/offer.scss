@@ -1,0 +1,73 @@
+@import 'variables';
+// OFFER STYLES //
+#offer {
+    margin: 8rem 0;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.5)),url('../assets/photo2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    height: 40vh;
+
+    .container {
+        @include centering-flex(center,column);
+        height: 40vh;
+        .offer-wrapper {
+            &::after {
+                content: "En iyi fiyata";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 20%;
+                height: 30px;
+                font-family: $secondary-font;
+                font-size: 1.2vh;
+                color: $light-color;
+                background-color: $primary-color;
+                line-height: 29px;
+                text-align: center;
+                cursor: pointer;
+            }
+
+            @include centering-flex(center,column);
+            width: 60%;
+            height: 55%;
+            text-align: center;
+            background-color: rgba(255, 213, 107, 0.5);
+            filter: drop-shadow(16px 16px 10px black);
+            h2 {
+                font-size: 3vh;
+                color: $light-color;
+            }
+
+            p {
+                font-size: 1.8vh;
+                font-family: $secondary-font;
+                color: $light-color;
+                margin: 1rem 0;
+            }
+
+            button {
+                @include button(1.5vh, 12.2vh, 4.2vh, 400);
+                @extend %transition;
+                &:hover {
+                    @extend %button-hover;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+     
+    // OFFER RESPONSIVE //
+   
+    .offer-wrapper {
+        width: 95% !important;
+        &::after {
+            width: 15% !important;
+            
+        }
+    }
+
+}

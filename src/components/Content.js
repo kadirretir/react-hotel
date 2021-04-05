@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
-import { HotelsContext } from '../contexts/HotelsContext';
-import Bounce from 'react-reveal/Bounce';
+import  {HotelsContext}  from '../contexts/HotelsContext';
+import Slide from 'react-reveal/Slide';
 import { FaCheck } from 'react-icons/fa';
-
+import '../css/contents.scss';
 
 function Content() {
     const hotelContext = useContext(HotelsContext);
@@ -10,9 +10,9 @@ function Content() {
     return (
         <main id="main">
             <div className="container">
-            <Bounce left>
+            <Slide duration={900} left>
             <div className="content-header">
-                <h1>ŞİMDİ KEŞFET</h1>
+                <h1>ŞİMDİ KEŞFEDİN</h1>
                 <span>Tatilin tadını çıkarın...</span>
             </div>
                 <div className="row">
@@ -39,7 +39,7 @@ function Content() {
                     })}
                  
                 </div>
-                </Bounce>
+                </Slide>
             </div>
         </main>
     )
