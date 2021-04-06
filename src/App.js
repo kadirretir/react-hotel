@@ -11,17 +11,21 @@ import './css/app.scss';
 function App() {
 
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL} >
       <Header />
+     
 
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/about" component={About} />
         <Route path="/hotels" component={Hotels} />
-        <Route path="/contact" component={Contact} />
+        <Route path="/contact" component={Contact} /> 
+     
       </Switch>
+   
 
     </Router>
+  
   );
 }
 
