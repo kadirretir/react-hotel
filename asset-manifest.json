@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/react-hotel/static/css/main.07faf63a.chunk.css",
-    "main.js": "/react-hotel/static/js/main.0259e5f5.chunk.js",
-    "main.js.map": "/react-hotel/static/js/main.0259e5f5.chunk.js.map",
+    "main.js": "/react-hotel/static/js/main.ac3fe99c.chunk.js",
+    "main.js.map": "/react-hotel/static/js/main.ac3fe99c.chunk.js.map",
     "runtime-main.js": "/react-hotel/static/js/runtime-main.eda4a782.js",
     "runtime-main.js.map": "/react-hotel/static/js/runtime-main.eda4a782.js.map",
     "static/js/2.84ea8788.chunk.js": "/react-hotel/static/js/2.84ea8788.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.eda4a782.js",
     "static/js/2.84ea8788.chunk.js",
     "static/css/main.07faf63a.chunk.css",
-    "static/js/main.0259e5f5.chunk.js"
+    "static/js/main.ac3fe99c.chunk.js"
   ]
 }
