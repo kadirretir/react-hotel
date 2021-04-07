@@ -14,8 +14,6 @@ function Header() {
     useEffect(() => {
         window.addEventListener("scroll", headerSet)
 
-        return () => 
-        window.removeEventListener("scroll", headerSet)
     }, [])
 
     return (
@@ -30,9 +28,8 @@ function Header() {
                     <ul>
                     
                         <li><Link to="/" className={stickyHeader ? "nav-links stickyMenu" : "nav-links"}>Anasayfa</Link></li>
-                        <li><Link to="/about" className={stickyHeader ? "nav-links stickyMenu" : "nav-links"}>Hakkımızda</Link></li>
                         <li><Link to="/hotels" className={stickyHeader ? "nav-links stickyMenu" : "nav-links"}>Otellerimiz</Link></li>
-                        <li><Link to="/contact" className={stickyHeader ? "nav-links stickyMenu" : "nav-links"}>İletişim</Link></li>
+                        <li><Link to="/about" className={stickyHeader ? "nav-links stickyMenu" : "nav-links"}>Hakkımızda</Link></li>
                       
                     </ul>
 

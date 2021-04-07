@@ -4,7 +4,7 @@ import '../css/contact.scss';
 function Contact() {
     return (
         <section id="contact">
-            <div class="container">
+            <div className="container">
                 <h2>Bizimle İletişime Geçin</h2>
             <form >
                 <input type="text" id="fname" name="firstname" placeholder="Adınız.." />

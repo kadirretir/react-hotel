@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import { HotelsContext } from '../contexts/HotelsContext';
 import '../css/rooms.scss';
-import Slide from 'react-reveal/Slide';
 function Rooms() {
 
     const hotelContext = useContext(HotelsContext);
@@ -9,16 +8,15 @@ function Rooms() {
     return (
         <section id="rooms">
         <div className="container">
-        <Slide duration={900} right>
         <div className="content-header">
             <h1>ODANIZI TUTUN</h1>
             <span>Tatilin tadını çıkarın...</span>
         </div>
             <div className="row">
-                {hotelContext.myRooms.map((hotel) => {
+                {hotelContext.myRooms.map((hotel, i) => {
                     return (
                         
-                        <div className="card" data-category={hotel.family ? "Aile için uygun" : "Gençlere özel fırsatlar"}>
+                        <div className="card" key={i} data-category={hotel.family ? "Aile için uygun" : "Gençlere özel fırsatlar"}>
                             <figure className="img-wrapper"> 
                             <img src={hotel.room_img} alt="hotelimages" />
                             </figure>
@@ -37,7 +35,7 @@ function Rooms() {
                 })}
              
             </div>
-            </Slide>     
+               
         </div>  
     </section>
     )
