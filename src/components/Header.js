@@ -12,8 +12,7 @@ function Header() {
     }
 
     useEffect(() => {
-        window.addEventListener("scroll", headerSet)
-
+        window.addEventListener("scroll", headerSet);
     }, [])
 
     return (

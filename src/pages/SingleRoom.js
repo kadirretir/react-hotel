@@ -26,16 +26,18 @@ function SingleRoom({match}) {
 
                     <section id="features">
                         <div className="container">
+                            <div className="img-row">
                         {singleHotel.hotel_room_img.map((item, index) => {
                                 return (
-                                    <div className="img-wrapper" key={index}> 
+                                   
                                     
-                                  <a href={item}><img src={item} alt="singleHotel" /></a>
+                                  <a key={index} href={item}><img src={item} width="400" height="300" alt="singleHotel" /></a>
                                    
                                         
-                                    </div>
+                                   
                                 );
                             })}
+                            </div>
 
                             <div className="singleRoom-details-left">
                               
@@ -85,10 +87,11 @@ function SingleRoom({match}) {
                     </section>
                    
                 </React.Fragment>
+                
         ))}
         
-            
-          <Footer/>
+        <Footer/>
+         
         </React.Fragment>
 
     )
