@@ -1,6 +1,7 @@
 import React, {useContext} from 'react'
 import  {HotelsContext}  from '../contexts/HotelsContext';
 import { FaCheck } from 'react-icons/fa';
+import {Link} from 'react-router-dom';
 import Footer from '../components/Footer';
 import '../css/singleRoom.scss';
 
@@ -10,7 +11,7 @@ function SingleRoom({match}) {
       
 
     return (
-        <React.Fragment>
+        <>
         {hotelContext.myHotel.filter(filterHotel => filterHotel.title.replace(/\s+/g, '').includes(match.params.id)).map((singleHotel) => ( 
                  <React.Fragment key={singleHotel.id}>
                  <section id="singleRoom"   style={{backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7)),url(${singleHotel.hotel_img})`}}>
@@ -29,12 +30,9 @@ function SingleRoom({match}) {
                             <div className="img-row">
                         {singleHotel.hotel_room_img.map((item, index) => {
                                 return (
-                                   
-                                    
-                                  <a key={index} href={item}><img src={item} width="400" height="300" alt="singleHotel" /></a>
-                                   
-                                        
-                                   
+                                  <a key={index} href={item}>
+                                      <img src={item} width="400" height="300" alt="singleHotel" />
+                                  </a>    
                                 );
                             })}
                             </div>
@@ -70,6 +68,11 @@ function SingleRoom({match}) {
                                         <li><span>Ücretsiz Kahvaltı: </span><b>{singleHotel.breakfast ? "Mevcut" : "Mevcut Değil"}</b></li>
                                         <li><span>Müsait Oda Sayısı: </span><b>{singleHotel.avaibleRoom} Oda</b></li>
                                         <li><span></span><b>{singleHotel.beach ? "Otel sahil kenarında" : "Sahili yok"}</b></li>
+                                        <li><span></span>
+                                        <Link to={`/hotels/room/${singleHotel.title.replace(/\s+/g, '')}`}>
+                                            <button>Odalara Göz Gezdir</button>
+                                        </Link>
+                                        </li>
                                     </ul>
                                 
                                     </div>
@@ -92,7 +95,7 @@ function SingleRoom({match}) {
         
         <Footer/>
          
-        </React.Fragment>
+        </>
 
     )
 }

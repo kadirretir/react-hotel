@@ -9,8 +9,8 @@
 
 html { 
     font-size: 62.5%; 
-    scroll-behavior: smooth;
     scroll-padding-top: 8rem;
+    scroll-behavior: unset;
 }
 
 body {
@@ -84,8 +84,10 @@ h1 {
         }
 
         nav {
+           
             ul {
                 @include centering-flex(space-between, row);
+                
             li {
                 margin-right: 1rem;
                 &:last-of-type {

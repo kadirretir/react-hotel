@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { HotelsContext } from '../contexts/HotelsContext';
+import {Link} from 'react-router-dom';
 import '../css/rooms.scss';
 function Rooms() {
 
@@ -13,18 +14,18 @@ function Rooms() {
             <span>Tatilin tadını çıkarın...</span>
         </div>
             <div className="row">
-                {hotelContext.myRooms.map((hotel, i) => {
+                {hotelContext.myRooms.map((room) => {
                     return (
                         
-                        <div className="card" key={i} data-category={hotel.family ? "Aile için uygun" : "Gençlere özel fırsatlar"}>
+                        <div className="card" key={room.id} data-category={room.luks ? "Lüks" : "Standart"}>
                             <figure className="img-wrapper"> 
-                            <img src={hotel.room_img} alt="hotelimages" />
+                            <img src={room.room_img} alt="hotelimages" />
                             </figure>
                             <div className="img-text">
                               <div className="middle">
-                               <h2>{hotel.title}</h2>
-                               <p>{`Haftalık Aile ile Konaklama/$${hotel.price}`}</p>
-                               <button>Rezervasyon Yap</button>
+                               <h2>{room.title}</h2>
+                               <p>{`Haftalık Aile ile Konaklama/$${room.price}`}</p>
+                               <Link to={`/hotels/room/${room.title.replace(/\s+/g, '')}`}><button>Rezervasyon Yap</button></Link> 
                                </div>
                             </div>
             

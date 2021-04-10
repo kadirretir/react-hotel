@@ -7,7 +7,7 @@ h2 {
     margin-bottom: 3rem;
 }
 
-#singleRoom {
+#BookRoom {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -45,7 +45,7 @@ h2 {
 
 // SİNGLE ROOM FEATURES STYLES //
 
-#features {
+#room-features {
     margin: 8rem 0;
     height: fit-content;
 
@@ -53,8 +53,8 @@ h2 {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-template-areas: 
+        'textright textleft textleft'
         'img img img'
-        'textleft textleft textright'
         'extras extras extras';
         grid-row-gap: 10rem;
         
@@ -150,14 +150,14 @@ h2 {
 
   
         
-        #features .container {
+        #room-features .container {
             width: 90%;
             display: grid;
             grid-template-columns: 1fr 1fr;
             grid-template-areas: 
+            'textright textleft'
             'img img'
             'img img'
-            'textleft textright'
             'extras extras';
            
             .img-row {
@@ -181,16 +181,16 @@ h2 {
 
    
 
-    #features .container {
+    #room-features .container {
         width: 95%;
         display: grid;
         grid-template-columns: 1fr;
         grid-row-gap: 4rem;
         grid-column-gap: 0.3rem;
         grid-template-areas: 
-        'img'
-        'textleft'
         'textright'
+        'textleft'
+        'img'
         'extras';
         height: auto;
     }
