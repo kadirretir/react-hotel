@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import Header from './components/Header'
 import Home from './pages/Home';
 import About from './pages/About';
@@ -18,7 +18,7 @@ function App() {
        <ScrollToTop />
         <Header />
 
-        <HashRouter basename="/react-hotel/#/">
+        <Switch>
     
           <Route path="/" exact component={Home} />
           <Route path="/about" component={About} />
@@ -26,7 +26,7 @@ function App() {
           <Route path="/hotels/:id" exact component={SingleRoom} />
           <Route path="/hotels/room/:id" exact component={BookRoom} />
 
-        </HashRouter>
+        </Switch>
     </>
 
   );
