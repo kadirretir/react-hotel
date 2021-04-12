@@ -1,16 +1,58 @@
-// CONTENT STYLES //
 @import 'variables';
 
-main {
+// HERO STYLES //
+#hotels-hero {
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7)),
+    url('https://images.pexels.com/photos/3201921/pexels-photo-3201921.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    filter: brightness(120%);
+    height: 90vh;
+    
+    .container {
+        .hero-content {
+            margin: 0;
+            position: absolute;
+            top: 52%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            h1 {
+                font-size: 4.7vh;
+                color: $primary-color;
+                font-weight: 700;
+            }
+    
+            h3 {
+                font-size: 3.2vh;
+                color: $light-color;
+                margin: 1rem 0;
+            }
+            
+            button {
+                    @include button(1.7vh, 15.5vh, 4.7vh, 600);
+    
+            }
+            
+           
+        }
+       
+    }
+
+}
+
+#hotels {
     margin: 8rem 0;  
-    height: auto;
+    height: 140vh;
     .container {
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: auto;
-        .content-header {
+        .search-title {
             text-align: center;
-            margin-bottom: 7rem;
+           
 
             h1 { 
                 font-size: 3.7vh;
@@ -51,7 +93,7 @@ main {
                 text-align: center;
                 margin: 0 auto;
                 .img-wrapper {
-                    height: fit-content;
+                    height: auto;
                     & img {
                         max-width: 100%;
                         filter: brightness(50%);
@@ -125,24 +167,40 @@ main {
     }
 }
 
+
 @media screen and (max-width: 1200px) {
-   
+    
     // MAIN RESPONSIVE //
 
-    #main .container .row {
-        grid-template-columns: 1fr 1fr;
-            grid-row-gap: 2rem;
-    }
+    #hotels {
+        height: fit-content;
+        .container {
+            .row {
+                grid-template-columns: 1fr 1fr;
+                grid-row-gap: 2rem;
+            }
+        } 
+    } 
 
-   
+  
   }
 
 @media screen and (max-width: 768px) {
-    
-    #main .container .row {
-        grid-template-columns: 1fr;
-            grid-row-gap: 2rem;
-    }
+ 
+    #hotels {
+        height: fit-content;
+        .container {
+            .row {
+                grid-template-columns: 1fr;
+                    grid-row-gap: 2rem;
+            }
+        } 
+    } 
   }
+
+
+
+
+
 
 

@@ -28,6 +28,28 @@ function HotelsContextProvider (props) {
                 minigolf: false,
                 price: 1730,
             },
+            {
+                id: uuidv4(),
+                title: "DoubleTree by Hilton Hotel",
+                avaibleRoom: 13,
+                hotel_img: "https://images.unsplash.com/photo-1570213489059-0aac6626cade?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80",
+                hotel_room_img: [
+                        "https://images.unsplash.com/photo-1557034362-d9b6856e4cab?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+                        "https://images.unsplash.com/photo-1588151146398-00962e986475?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+                        "https://images.unsplash.com/photo-1569369926169-9ee7fb80adeb?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1344&q=80",
+                       ],    
+                luks: true,
+                maxCapacity: 33,
+                breakfast: true,
+                freeotopark: true,
+                pool: true,
+                wifi: true,
+                gym: true,
+                bar: true,
+                beach: true,
+                minigolf: false,
+                price: 2899,
+            },
     
             {
                 id: uuidv4(),
@@ -148,7 +170,7 @@ function HotelsContextProvider (props) {
                 id: uuidv4(),
                 title: "Panama Hotel",
                 avaibleRoom: 13,
-                hotel_img: "https://images.unsplash.com/photo-1568084680786-a84f91d1153c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80",
+                hotel_img: "https://images.unsplash.com/photo-1584132869994-873f9363a562?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80",
                 hotel_room_img: [
                     "https://images.unsplash.com/photo-1541123603104-512919d6a96c?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80",
                     "https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80",
@@ -158,7 +180,7 @@ function HotelsContextProvider (props) {
                 maxCapacity: 34,
                 breakfast: true,
                 freeotopark: false,
-                pool: true,
+                pool: false,
                 wifi: false,
                 gym: true,
                 bar: false,
@@ -193,6 +215,30 @@ function HotelsContextProvider (props) {
                 luks: false,
                 breakfast: true,
                 price: 2530,
+            },
+
+            {
+                id: uuidv4(),
+                title: "DoubleTree by Hilton Hotel",
+                cigarette: true,
+                pets: true,
+                airing: true,
+                privatebeach: true,
+                additionalbath: true,
+                roomservice: true,
+                nestedrooms: false,
+                minibar: false,
+                fridge: true,
+                television: true,
+                room_img: "https://images.unsplash.com/photo-1583522862857-bd9f6d34a236?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80",
+                img_rooms: [
+                        "https://images.unsplash.com/photo-1567624928242-f97fa84bf25c?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80",
+                        "https://images.pexels.com/photos/4825701/pexels-photo-4825701.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                        "https://images.pexels.com/photos/271643/pexels-photo-271643.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                       ],    
+                luks: true,
+                breakfast: true,
+                price: 2899,
             },
     
             {
@@ -330,13 +376,18 @@ function HotelsContextProvider (props) {
                 ],
                 luks: false,
                 price: 1268,
-            }
-        ]
+            },
+        ],
+      
     );
-         
 
+  
         return (
-            <HotelsContext.Provider value={{myRooms, myHotel}}>
+            <HotelsContext.Provider
+             value={{
+                 myRooms, 
+                 myHotel, 
+                 }}>
                 {props.children}
             </HotelsContext.Provider>
         )

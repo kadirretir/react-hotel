@@ -6,9 +6,11 @@ import HotelsContextProvider from './contexts/HotelsContext';
 
 
 ReactDOM.render(
-    <HotelsContextProvider>
-    <App/>
-    </HotelsContextProvider>,
+   
+      <HotelsContextProvider>
+      <App/>
+      </HotelsContextProvider>,
+  
   document.getElementById('root')
 );
 
