@@ -5,21 +5,26 @@
 // MAIN STYLES //
 #root {
     min-width: 100%;
+    min-height: 100%;
+}
+
+html, body {
+    height: 100%;
 }
 
 html { 
     font-size: 62.5%; 
     scroll-padding-top: 8rem;
-    scroll-behavior: unset;
+    scroll-behavior: auto;
+  
 }
 
 body {
     font-family: $primary-font;
+
 }
 
-section {
-    height: 94vh;
-}
+
 
 .container {
     width: 70%;
@@ -48,7 +53,11 @@ h1 {
     z-index: 9;
     background-color: rgba(248, 143, 1, 0.9);
     filter:brightness(120%);
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
+
 
 .stickyMenu {
     color: $light-color !important;
@@ -66,9 +75,8 @@ h1 {
 
 #header {
     @extend %transition;
-    position: sticky;
-    top: 0;
-    padding: 0.7rem 0;
+    min-height: 7rem;
+    @include centering-flex(space-between,row );
     .container {
         @include centering-flex(space-between,row );
         .logo {
@@ -99,7 +107,7 @@ h1 {
                     display: block;
                     position: relative;
                     @extend %transition;
-                    font-size: 2vh;
+                    font-size: 2rem;
         
                     &:hover {
                         color: $secondary-color;
@@ -143,11 +151,39 @@ h1 {
 
     // HEADER RESPONSIVE //
 
-    #header .container  {
-       @include centering-flex(space-between,column); 
-    }
+    #header {
+        height: 9rem;
+        .container  {
+            @include centering-flex(space-between,column); 
+         }
+    } 
 
    
   }
+
+  @media screen and (max-width: 574px) {
+
+
+    // HEADER RESPONSIVE //
+
+    .nav-links {
+        font-size: 1.7rem !important;
+    }
+   
+  }
+
+  @media screen and (max-width: 280px) {
+   
+
+    // HEADER RESPONSIVE //
+
+    .nav-links {
+        font-size: 1.5rem !important;
+    }
+    
+    
+  }
+
+
 
   

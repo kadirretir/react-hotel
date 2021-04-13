@@ -9,8 +9,9 @@
     background-position: center;
     background-attachment: fixed;
     filter: brightness(120%);
-    height: 90vh;
-    
+    min-height: 90vh;
+    will-change : transform;
+    overflow: hidden;
     .container {
         .hero-content {
             margin: 0;
@@ -20,19 +21,19 @@
             transform: translate(-50%, -50%);
             text-align: center;
             h1 {
-                font-size: 4.7vh;
+                font-size: 4.5rem;
                 color: $primary-color;
                 font-weight: 700;
             }
     
             h3 {
-                font-size: 3.2vh;
+                font-size: 3rem;
                 color: $light-color;
                 margin: 1rem 0;
             }
             
             button {
-                    @include button(1.7vh, 15.5vh, 4.7vh, 600);
+                    @include button(1.5rem, 15.3rem, 4.5rem, 600);
     
             }
             
@@ -45,7 +46,7 @@
 
 #hotels {
     margin: 8rem 0;  
-    height: 140vh;
+    min-height: 130vh;
     .container {
         display: grid;
         grid-template-columns: 1fr;
@@ -55,14 +56,14 @@
            
 
             h1 { 
-                font-size: 3.7vh;
+                font-size: 3.5rem;
                 color: $primary-color;
             }
 
             span {
                 font-family: $secondary-font;
                 font-style: italic;
-                font-size: 1.7vh;
+                font-size: 1.5rem;
             }
            
         }
@@ -70,8 +71,12 @@
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             grid-template-rows: 1fr;
-            grid-row-gap: 4rem;
+            grid-gap: 4rem;
             .card {
+                position: relative;
+                text-align: center;
+                margin: 0 auto;
+
                 &::after {
                     content: attr(data-category);
                     position: absolute;
@@ -80,20 +85,14 @@
                     width: 25%;
                     height: 30px;
                     font-family: $secondary-font;
-                    font-size: 1.4vh;
+                    font-size: 1.2rem;
                     color: $light-color;
                     background-color: $primary-color;
                     line-height: 27px;
                     cursor: pointer;
                     border-bottom-left-radius: 0.8rem;
                 }
-                width: 95%;
-                height: fit-content;
-                position: relative;
-                text-align: center;
-                margin: 0 auto;
                 .img-wrapper {
-                    height: auto;
                     & img {
                         max-width: 100%;
                         filter: brightness(50%);
@@ -128,18 +127,18 @@
                     transform: translate(-50%, -50%);
                     color: $light-color;
                     h2 {
-                        font-size: 2.6vh;
+                        font-size: 2.4rem;
                         font-family: $secondary-font;
                     }
                     
                     p {
-                        margin: 1vh 0;
-                        font-size: 1.5vh;
+                        margin: 1rem 0;
+                        font-size: 1.3rem;
                         font-weight: 600;
                     }
 
                     button {
-                        @include button(1.5vh, 11.2vh, 4.2vh, 400);
+                        @include button(1.3rem, 11rem, 4rem, 400);
                         @extend %transition;
                         font-family: $secondary-font;
 
@@ -152,7 +151,7 @@
 
                   h3 {
                     font-family: $secondary-font;
-                    font-size: 1.5vh;
+                    font-size: 1.3rem;
                     color: $light-color;
                     position: absolute;
                     top: 90%;
@@ -173,11 +172,11 @@
     // MAIN RESPONSIVE //
 
     #hotels {
-        height: fit-content;
         .container {
+            width: 95%;
             .row {
                 grid-template-columns: 1fr 1fr;
-                grid-row-gap: 2rem;
+                grid-gap: 1.5rem;
             }
         } 
     } 
@@ -188,11 +187,10 @@
 @media screen and (max-width: 768px) {
  
     #hotels {
-        height: fit-content;
         .container {
             .row {
                 grid-template-columns: 1fr;
-                    grid-row-gap: 2rem;
+                    grid-gap: 1rem;
             }
         } 
     } 

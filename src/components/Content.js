@@ -25,7 +25,7 @@ function Content() {
 
                                 <div className="card" key={i} data-category={`${hotel.avaibleRoom} Oda Mevcut`}>
                                     <figure className="img-wrapper">
-                                        <img src={hotel.hotel_img} alt="hotelimages" />
+                                        <img src={hotel.hotel_img} height="249" width="361" alt="hotelimages" />
                                     </figure>
                                     <div className="img-text">
                                         <div className="middle">

@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
-import '../css/app.css';
+import '../css/app.scss';
 
 function Header() {
-    const [stickyHeader, setStickyHeader] = useState(false);
+     const [stickyHeader, setStickyHeader] = useState(false);
 
     const headerSet = () => {
         if(window.pageYOffset > 0) {
@@ -13,11 +13,13 @@ function Header() {
 
     useEffect(() => {
         window.addEventListener("scroll", headerSet);
+        console.log("çalıştı")
     }, [])
 
+        
     return (
-        <div id="header" className={stickyHeader ? "stickyStyle" : null}>
-            <div className="container">
+         <div id="header"  className={stickyHeader ? "stickyStyle" : null} >
+             <div className="container">
                 <div className={stickyHeader ? "logo stickyLogo" : "logo"}>
                     <h1>
                         <Link to="/">HOTELS</Link>
@@ -33,9 +35,9 @@ function Header() {
                     </ul>
 
                 </nav>
-            </div>
-        </div>
-
+            </div> 
+        </div> 
+      
     )
 }
 

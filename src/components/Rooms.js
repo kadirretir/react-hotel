@@ -19,7 +19,7 @@ function Rooms() {
                         
                         <div className="card" key={room.id} data-category={room.luks ? "Lüks" : "Standart"}>
                             <figure className="img-wrapper"> 
-                            <img src={room.room_img} alt="hotelimages" />
+                            <img src={room.room_img} height="249" width="361" alt="hotelimages" />
                             </figure>
                             <div className="img-text">
                               <div className="middle">

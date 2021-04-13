@@ -9,7 +9,7 @@ import Footer from '../components/Footer';
 function Home() {
     return (
         <>
-        <Hero />
+        <Hero /> 
         <Content />
         <Offer />
         <Rooms />

@@ -8,11 +8,12 @@
     background-position: center;
     background-attachment: fixed;
     filter: brightness(120%);
-    height: 90vh;
-    
+    min-height: 90vh;
+    will-change : transform;
+    overflow: hidden;
+
     .container {
-        scroll-behavior: smooth;
-        .hero-content {
+        .main-hero-content {
             margin: 0;
             position: absolute;
             top: 52%;
@@ -20,19 +21,19 @@
             transform: translate(-50%, -50%);
             text-align: center;
             h1 {
-                font-size: 4.7vh;
+                font-size: 4.5rem;
                 color: $primary-color;
                 font-weight: 700;
             }
     
             h3 {
-                font-size: 3.2vh;
+                font-size: 2.9rem;
                 color: $light-color;
                 margin: 1rem 0;
             }
             
             button {
-                    @include button(1.7vh, 15.5vh, 4.7vh, 600);
+                    @include button(1.4rem, 15.1rem, 4.5rem, 600);
     
                 }
             
@@ -42,3 +43,30 @@
     }
 
 }
+
+
+@media screen and (max-width: 1200px) {
+   
+    
+    // MAIN RESPONSIVE //
+    .main-hero-content {
+        h1 {
+            font-size: 3.4rem !important;
+        }
+
+        h3 {
+            font-size: 2rem !important;
+            margin: 1.3rem 0 ;
+        }
+
+        button {
+            width: 10rem !important;
+            font-size: 1rem !important;
+            height: 3.5rem !important;
+        }
+      
+    }
+
+   
+  }
+

@@ -39,7 +39,7 @@ function BookRoom({match}) {
 
                             <div className="singleRoom-details-left">
                               
-                                    <h2>{singleRooms.title} Odaları Hakkında </h2>
+                                    <h2 className="bookRoom-header">{singleRooms.title} Odaları Hakkında </h2>
                                     <p>
                                     Sizin için özenle dekore edilmiş otel odalarımız ve evlerimiz, 
                                    kısa ve uzun süreli konaklamalarda en iyi adrestir.
@@ -54,7 +54,7 @@ function BookRoom({match}) {
                                 </div>
                                     <div className="singleRoom-details-right">
                                    
-                                    <h2>Oda Özellikleri</h2>
+                                    <h2 className="bookRoom-header">Oda Özellikleri</h2>
                                     <ul>
                                         <li><span>Klima: </span><b>{singleRooms.airing ? "Mevcut" : "Yok"}</b></li>
                                         <li><span>Özel Plaj: </span><b>{singleRooms.privatebeach ? "Mevcut" : "Yok"}</b></li>

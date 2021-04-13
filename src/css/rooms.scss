@@ -2,7 +2,7 @@
 
 #rooms {
     margin: 8rem 0;  
-    height: auto;
+    min-height: 100vh;
     .container {
         display: grid;
         grid-template-columns: 1fr;
@@ -12,14 +12,14 @@
             margin-bottom: 7rem;
 
             h1 { 
-                font-size: 3.7vh;
+                font-size: 3.4rem;
                 color: $primary-color;
             }
 
             span {
                 font-family: $secondary-font;
                 font-style: italic;
-                font-size: 1.7vh;
+                font-size: 1.5rem;
             }
            
         }
@@ -27,28 +27,28 @@
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             grid-template-rows: 1fr;
-            grid-row-gap: 4rem;
+            grid-gap: 4rem;
             .card {
+                position: relative;
+                text-align: center;
+                margin: 0 auto;
+
                 &::after {
                     content: attr(data-category);
                     position: absolute;
                     bottom: 2px;
                     left: 0;
                     width: 25%;
-                    height: 30px;
+                    height: 3rem;
                     font-family: $secondary-font;
-                    font-size: 1.4vh;
+                    font-size: 1.3rem;
                     color: $light-color;
                     background-color: $primary-color;
                     line-height: 27px;
                     cursor: pointer;
                     border-bottom-left-radius: 0.8rem;
                 }
-                width: 95%;
-                height: fit-content;
-                position: relative;
-                text-align: center;
-                margin: 0 auto;
+
                 .img-wrapper {
                     & img {
                         max-width: 100%;
@@ -84,18 +84,18 @@
                     transform: translate(-50%, -50%);
                     color: $light-color;
                     h2 {
-                        font-size: 2.6vh;
+                        font-size: 2.4rem;
                         font-family: $secondary-font;
                     }
                     
                     p {
-                        margin: 1vh 0;
-                        font-size: 1.5vh;
+                        margin: 1rem 0;
+                        font-size: 1.4rem;
                         font-weight: 600;
                     }
 
                     button {
-                        @include button(1.5vh, 11.2vh, 4.2vh, 400);
+                        @include button(1.4rem, 11rem, 4rem, 400);
                         @extend %transition;
                         font-family: $secondary-font;
 
@@ -116,11 +116,17 @@
 @media screen and (max-width: 1200px) {
    
     // MAIN RESPONSIVE //
-
-    #rooms .container .row {
-        grid-template-columns: 1fr 1fr;
-            grid-row-gap: 2rem;
+   
+    #rooms {
+        .container {
+            width: 95%;
+            .row {
+                grid-template-columns: 1fr 1fr;
+                    grid-row-gap: 2rem;
+            }
+         } 
     }
+     
 
    
   }

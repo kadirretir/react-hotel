@@ -1,7 +1,7 @@
 @import 'variables';
 
 #contact {
-    height: auto;
+    min-height: 50vh;
     padding: 5rem 0;
     margin: 5rem 0;
     @include centering-flex(center, row);
@@ -9,7 +9,7 @@
         @include centering-flex(center,column );
         h2 {
             color: $primary-color;
-            font-size: 2.9vh;
+            font-size: 2.6rem;
             font-family: $secondary-font;
             margin-bottom: 2rem;
         }
@@ -36,7 +36,7 @@
             }
             
             input[type=submit] {
-                @include button(1.4vh, 18vh, 4vh, 600);
+                @include button(1.3rem, 17.7rem, 3.7rem, 600);
                 background-color: $primary-color;
                 color: $light-color;
                 margin-top: 2rem;

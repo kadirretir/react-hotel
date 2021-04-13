@@ -1,8 +1,8 @@
 @import 'variables';
 
 // SİNGLE ROOM HERO STYLES //
-h2 {
-    font-size: 2.7vh;
+.bookRoom-header {
+    font-size: 2.5rem;
     color: $primary-color;
     margin-bottom: 3rem;
 }
@@ -13,7 +13,9 @@ h2 {
     background-position: center;
     background-attachment: fixed;
     filter: brightness(120%);
-    height: 90vh;
+    min-height: 90vh;
+    will-change : transform;
+    overflow: hidden;
     .container {
         .hero-content {
             margin: 0;
@@ -23,19 +25,19 @@ h2 {
             transform: translate(-50%, -50%);
             text-align: center;
             h1 {
-                font-size: 4.7vh;
+                font-size: 4.5rem;
                 color: $primary-color;
                 font-weight: 700;
             }
     
             h3 {
-                font-size: 3.2vh;
+                font-size: 3rem;
                 color: $light-color;
                 margin: 1rem 0;
             }
     
             button {
-                @include button(1.7vh, 15.5vh, 4.7vh, 600);
+                @include button(1.5rem, 15.3rem, 4.5rem, 600);
             }
         }
        
@@ -84,7 +86,7 @@ h2 {
             grid-area: textleft;
             height:  auto;
              p {
-                 font-size: 2.3vh;
+                 font-size: 2.1rem;
                  color: $fourth-color;
                  font-family: $secondary-font;
              }
@@ -97,16 +99,16 @@ h2 {
             height: auto;
             ul {
                 margin-top: 2rem;
-                font-size: 2vh;
+                font-size: 2rem;
                
                 li {
                     display: grid;
                     grid-template-columns: 50% 50%;
                      grid-template-rows: 1fr;
-                    margin: 1.3vh 0;
+                    margin: 1.2rem 0;
 
                     button {
-                        @include button(1.5vh, 15vh, 4.2vh, 400);
+                        @include button(1.3rem, 14.8rem, 4rem, 400);
                         @extend %transition;
                         font-family: $secondary-font;
 
@@ -126,8 +128,8 @@ h2 {
 
             b {
                 color: $fourth-color;
-                font-size: 2vh;
-                margin-right: 2vh;
+                font-size: 2rem;
+                margin-right: 2rem;
                 & svg {
                     margin-right: 0.5rem;
                     color: $primary-color;
@@ -142,14 +144,31 @@ h2 {
 
 
 @media screen and (max-width: 1200px) {
-   
+    button {
+        width: 10rem !important;
+        font-size: 1rem !important;
+        height: 3.5rem !important;
+    }
+    
     // MAIN RESPONSIVE //
+    .hero-content {
+        h1 {
+            font-size: 3.7rem !important;
+            font-weight: 700;
+        }
+
+        h3 {
+            font-size: 2.4rem !important;
+            margin: 1.3rem 0 !important;
+        }
+
+      
+    }
+
     .singleRoom-details-left {
         text-align: center;
     }
-
   
-        
         #room-features .container {
             width: 90%;
             display: grid;
@@ -199,8 +218,8 @@ h2 {
         @include centering-flex(center, column);
         
         b {
-            margin: 0.4vh 0;
-            font-size: 2.3vh;
+            margin: 0.4rem 0;
+            font-size: 2.1rem;
         }
     }
 

@@ -8,7 +8,7 @@ function Hero() {
 
 
             <div className="container">
-                <div className="hero-content">
+                <div className="main-hero-content">
                         <h1>Türkiye'nin en prestijli Otelleri sizleri bekliyor!</h1>
                         <h3>En iyi otellerimizi keşfedin</h3>
                   <a href="#main" className="scroll"> <button>Rezervasyon Yap</button></a> 
