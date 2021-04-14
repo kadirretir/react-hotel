@@ -8,11 +8,11 @@ import '../css/singleRoom.scss';
 
 function SingleRoom({match}) {
     const hotelContext = useContext(HotelsContext);
-      
+    const {myHotel} = hotelContext;
 
     return (
         <>
-        {hotelContext.myHotel.filter(filterHotel => filterHotel.title.replace(/\s+/g, '').includes(match.params.id)).map((singleHotel) => ( 
+        {myHotel.filter(filterHotel => filterHotel.title.replace(/\s+/g, '').includes(match.params.id)).map((singleHotel) => ( 
                  <React.Fragment key={singleHotel.id}>
                  <section id="singleRoom"   style={{backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7)),url(${singleHotel.hotel_img})`}}>
                         <div className="container">

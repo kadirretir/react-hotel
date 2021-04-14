@@ -21,10 +21,11 @@ function App() {
         <Switch>
     
           <Route path="/" exact component={Home} />
-          <Route path="/about" component={About} />
           <Route path="/hotels" exact component={Hotels} />
           <Route path="/hotels/:id" exact component={SingleRoom} />
           <Route path="/hotels/room/:id" exact component={BookRoom} />
+          <Route path="/about" component={About} />
+
 
         </Switch>
     </>
