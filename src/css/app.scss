@@ -1,6 +1,4 @@
-
 @import 'variables';
-
 
 // MAIN STYLES //
 #root {
@@ -10,33 +8,22 @@
 
 html, body {
     height: 100%;
+    -webkit-tap-highlight-color: transparent;
 }
 
 html { 
     font-size: 62.5%; 
     scroll-padding-top: 8rem;
     scroll-behavior: auto;
-  
 }
 
 body {
     font-family: $primary-font;
-
-}
-
-
-
-.container {
-    width: 70%;
-    margin: 0 auto;
 }
 
 h1 {
     font-size: 3rem;
 }
-
-
-
 
 // CLEARİNG SPACES  //
 *,
@@ -48,99 +35,8 @@ h1 {
     list-style-type: none;
     box-sizing: border-box;
 }
-// sticky Header //
-.stickyStyle {
-    z-index: 9;
-    background-color: rgba(248, 143, 1, 0.9);
-    filter:brightness(120%);
-    position: fixed;
-    top: 0;
-    width: 100%;
-}
-
-
-.stickyMenu {
-    color: $light-color !important;
-    &::after {
-        background: $light-color !important;
-    }
-}
-
-.stickyLogo a {
-    color: $light-color !important;
-        
-}
-// HEADER STYLES //
-
-
-#header {
-    @extend %transition;
-    min-height: 7rem;
-    @include centering-flex(space-between,row );
-    .container {
-        @include centering-flex(space-between,row );
-        .logo {
-            a {
-                font-size: 3.2rem;
-                user-select: none;
-                cursor: pointer;
-                font-style: italic;
-                font-family: $secondary-font;
-                letter-spacing: 0.5rem;
-                color: $primary-color;
-            }
-        }
-
-        nav {
-           
-            ul {
-                @include centering-flex(space-between, row);
-                
-            li {
-                margin-right: 1rem;
-                &:last-of-type {
-                    margin-right: 0;
-                }
-
-                .nav-links {
-                    color: $primary-color;
-                    display: block;
-                    position: relative;
-                    @extend %transition;
-                    font-size: 2rem;
-        
-                    &:hover {
-                        color: $secondary-color;
-                    }
-                    &::after {
-                        position: absolute;
-                        content: "";
-                        top: 100%;
-                        left: 0;
-                        width: 100%;
-                        height: 2px;
-                        background: $primary-color;
-                        transform: scaleX(0);
-                        transform-origin: right;
-                        transition: transform 0.5s;
-                      }
-        
-                      &:hover::after {
-                        transform: scaleX(1);
-                        transform-origin: left;
-                      }
-                }
-            }
-          }
-
-         
-        }
-    }
-}
-
 
 // RESPONSIVE MEDIA QUERIES //
-
 @media screen and (max-width: 1200px) {
     #root {
         max-width: 100%;
@@ -148,40 +44,6 @@ h1 {
     .container {
         width: 100%;
     }
-
-    // HEADER RESPONSIVE //
-
-    #header {
-        height: 9rem;
-        .container  {
-            @include centering-flex(space-between,column); 
-         }
-    } 
-
-   
-  }
-
-  @media screen and (max-width: 574px) {
-
-
-    // HEADER RESPONSIVE //
-
-    .nav-links {
-        font-size: 1.7rem !important;
-    }
-   
-  }
-
-  @media screen and (max-width: 280px) {
-   
-
-    // HEADER RESPONSIVE //
-
-    .nav-links {
-        font-size: 1.5rem !important;
-    }
-    
-    
   }
 
 

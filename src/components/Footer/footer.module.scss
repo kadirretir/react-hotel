@@ -1,0 +1,86 @@
+@import '../../css/variables';
+
+#footer {
+    min-height: 29vh;
+    padding: 3rem 0;
+    background-color: $secondary-color;
+    @include centering-flex(center, column);
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        width: 70%;
+        margin: 0 auto;
+        .middle {
+            @include centering-flex(space-around, column);
+        }
+        .footer_left {
+            #logo {
+                a {
+                    font-size: 3.2rem;
+                    user-select: none;
+                    cursor: pointer;
+                    font-style: italic;
+                    font-family: $secondary-font;
+                    letter-spacing: 0.5rem;
+                    color: $light-color;
+                }
+            }
+
+            p {
+                font-size: 1.3rem;
+                color: $light-color;
+            }
+        }
+
+        .footer_right {
+            h3 {
+                font-family: $secondary-font;
+                font-size: 2rem;
+                color: $light-color;
+            }
+
+            .socials {      
+                a {
+                    margin-right: 1rem;
+                    &:last-of-type {
+                        margin-right: 0;
+                    }
+                    color: $light-color;
+                    @extend %transition;
+                    &:hover {
+                        color: $fourth-color;
+                    }
+                }
+            }
+        }  
+    }
+}
+
+@media screen and (max-width: 1200px) {
+   
+    // MAIN RESPONSIVE //
+   #footer { 
+    .container {
+        width: 95%;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-row-gap: 3rem;
+       }
+   }
+   
+.footer_left {
+    p {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+    #footer .container {
+        width: 90%;
+   }  
+  }
+
+
